@@ -1,16 +1,4 @@
 repos:
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.0
-    hooks:
-      - id: isort
-  - repo: https://github.com/psf/black
-    rev: 24.4.2
-    hooks:
-      - id: black
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.1.0
-    hooks:
-      - id: flake8
   - repo: https://github.com/jackdewinter/pymarkdown
     rev: v0.9.21
     hooks:
@@ -19,3 +7,12 @@ repos:
           - --disable-rules
           - line-length
           - scan
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.11.13
+    hooks:
+      # Run the linter.
+      - id: ruff-check
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format

@@ -1,6 +1,6 @@
 [project]
 name = "wagtail-f-richtext"
-version = "1.1.0"
+version = "1.2.0"
 description = "An alternative Wagtail richtext filter that applies classes or styles to rich text HTML content."
 readme = "README.md"
 keywords = ["wagtail", "richtext", "filter", "html", "class", "style"]
@@ -19,25 +19,24 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Framework :: Django",
-    "Framework :: Django :: 3.2",
     "Framework :: Django :: 4.2",
-    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
     "Framework :: Wagtail",
-    "Framework :: Wagtail :: 4",
     "Framework :: Wagtail :: 5",
     "Framework :: Wagtail :: 6",
+    "Framework :: Wagtail :: 7",
 ]
 requires-python = ">=3.9"
 dependencies =[
-    "Wagtail>=4.1",
+    "Wagtail>=5.2",
 ]
 
 [project.optional-dependencies]
 development = [
-    "black==24.4.2",
-    "flake8==7.1.0",
-    "isort==5.13.0",
+    "ruff>=0.11.13",
 ]
 testing = [
   "coverage"
@@ -47,26 +46,3 @@ testing = [
 Repository = "https://github.com/wagtail-packages/wagtail-f-richtext"
 Issues = "https://github.com/wagtail-packages/wagtail-f-richtext/issues"
 Changelog = "https://github.com/wagtail-packages/wagtail-f-richtext/blob/release/CHANGELOG.md"
-
-
-[tool.black]
-line-length = 88
-target-version = ['py39']
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
-
-[tool.isort]
-profile = "black"
