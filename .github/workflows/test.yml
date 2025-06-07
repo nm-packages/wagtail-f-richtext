@@ -11,7 +11,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  test-lint: # ruff check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install ruff & run check
+        uses: astral-sh/ruff-action@v3
+    
   test-sqlite:
+    needs: test-lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -42,6 +50,7 @@ jobs:
           DATABASE: ${{ matrix.database }}
 
   test-postgres:
+    needs: test-lint    
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -89,6 +98,7 @@ jobs:
 
 
   test-mysql:
+    needs: test-lint    
     runs-on: ubuntu-latest
     strategy:
       matrix:
