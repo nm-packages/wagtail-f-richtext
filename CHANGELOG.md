@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.2.0] - 2025-06-07
 
 - Add support for Wagtail 5.2+
 - Add support for Django 4.2+
