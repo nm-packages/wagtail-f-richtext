@@ -15,8 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
       - name: Install ruff & run check
         uses: astral-sh/ruff-action@v3
+
     
   test-sqlite:
     needs: test-lint
